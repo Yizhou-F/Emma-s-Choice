@@ -9,10 +9,14 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #000000;
     font-family: Arial, sans-serif;
 }
 
+.container:before {
+    content: "";
+    position: fixed;
+    left: 0;
     right: 0;
     z-index: -1;
     display: block;
