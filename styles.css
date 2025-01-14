@@ -13,14 +13,29 @@ body {
     font-family: Arial, sans-serif;
 }
 
+    right: 0;
+    z-index: -1;
+    display: block;
+
+    background-image: url('images/back.webp');
+    background-size: cover;
+    background-position: center;
+
+    width: 100vw;
+    height: 80vw;
+  
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
 .container {
     display: flex;
     justify-content: space-between;
     width: 80%;
     gap: 20px;
-    background-image: url('images/back.webp');
-    background-size: cover;
-    background-position: center;
     border-radius: 10px;
     padding: 20px;
 }
@@ -39,6 +54,7 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     flex: 1;
     overflow: hidden;
+    width: 100%;
 }
 
 .box:first-child {
@@ -50,8 +66,8 @@ body {
 }
 
 .image {
-    width: 30vw;
-    height: 30vw;
+    width: 100%;
+    height: auto;
     border-radius: 8px;
     overflow: hidden;
 }
