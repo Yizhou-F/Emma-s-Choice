@@ -2,12 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const teaData = {
     tea: [
       {
-        type: "Black Tea",
+        type: "Black",
         chineseName: "红茶",
         items: ["宜兴红茶", "滇红", "肯尼亚红茶", "正山小种", "金骏眉"],
       },
       {
-        type: "Green Tea",
+        type: "Green",
         chineseName: "绿茶",
         items: [
           "六安瓜片",
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ],
       },
       {
-        type: "Dark Tea",
+        type: "Dark",
         chineseName: "黑茶",
         items: [
           "97茯茶",
@@ -37,12 +37,12 @@ document.addEventListener("DOMContentLoaded", () => {
         ],
       },
       {
-        type: "White Tea",
+        type: "White",
         chineseName: "白茶",
         items: ["寿眉", "金花寿眉", "白牡丹", "白毫银针"],
       },
       {
-        type: "Oolong Tea",
+        type: "Oolong",
         chineseName: "乌龙茶",
         items: [
           "老枞水仙",
@@ -57,12 +57,24 @@ document.addEventListener("DOMContentLoaded", () => {
     ],
   };
 
-  // Flatten all items into a single array
-  const allItems = teaData.tea.flatMap((teaType) => teaType.items);
-  // Pick a random item
-  const randomItem = allItems[Math.floor(Math.random() * allItems.length)];
+  const urlParams = new URLSearchParams(window.location.search);
+  const typeParam = urlParams.get("teatype");
 
-  // Update the result
+  const allItems = teaData.tea.flatMap((t) => t.items);
+
+  let selectionPool = allItems;
+  if (typeParam) {
+    const foundTea = teaData.tea.find(
+      (teaObj) => teaObj.type.toLowerCase() === typeParam.toLowerCase()
+    );
+    if (foundTea) {
+      selectionPool = foundTea.items;
+    }
+  }
+
+  const randomItem =
+    selectionPool[Math.floor(Math.random() * selectionPool.length)];
+
   const resultHeading = document.getElementById("teaOfTheDay");
   resultHeading.textContent = randomItem;
 });

@@ -39,7 +39,12 @@ body::before {
 }
 
 .randombox,
-.typebox {
+.typebox,
+.Black,
+.Green,
+.Dark,
+.White,
+.Oolong {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,6 +68,26 @@ body::before {
     background-image: url('images/type.jpg');
 }
 
+.Black {
+    background-image: url('images/black.jpg');
+}
+
+.Green {
+    background-image: url('images/green.jpg');
+}
+
+.Dark {
+    background-image: url('images/dark.jpg');
+}
+
+.White {
+    background-image: url('images/white.jpg');
+}
+
+.Oolong {
+    background-image: url('images/oolong.jpg');
+}
+
 .show {
     text-align: center;
     margin-bottom: 20px;
@@ -74,11 +99,21 @@ body::before {
 }
 
 .randombox:hover .show, 
-.typebox:hover .show {
+.typebox:hover .show,
+.Black:hover .show,
+.Green:hover .show,
+.Dark:hover .show,
+.White:hover .show,
+.Oolong:hover .show {
     display: none;
 }
 .randombox:hover .hover, 
-.typebox:hover .hover {
+.typebox:hover .hover,
+.Black:hover .hover,
+.Green:hover .hover,
+.Dark:hover .hover,
+.White:hover .hover,
+.Oolong:hover .hover {
     display: block;
 }
 
@@ -86,13 +121,32 @@ h2 {
     margin-bottom: 10px;
     color: #333;
 }
+
+.result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  overflow: hidden;
+  width: 75vw;
+  aspect-ratio: 10 / 11;
+  background: url("images/result.jpg") center/cover no-repeat;
+}
+
 p {
-    color: #555;
+    margin: 0;
 }
 
 #teaOfTheDay {
-    font-size: 2.5rem;
-    color: #64945f;
+    font-size: 4rem;
+    color: #000000;
     text-align: center;
     font-weight: bold;
     margin-top: 20px;
